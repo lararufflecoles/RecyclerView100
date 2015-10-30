@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="toolbar_background">#227755</color>
+    <color name="button_tint">#227755</color>
+</resources>

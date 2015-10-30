@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Recycler View 100</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_share">Share</string>
+    <string name="action_search">Search</string>
+
+</resources>
