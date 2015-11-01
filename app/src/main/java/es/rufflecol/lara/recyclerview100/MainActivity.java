@@ -15,7 +15,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements RecyclerAdapter.OnRecyclerItemClickListener {
 
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
@@ -40,25 +40,27 @@ public class MainActivity extends AppCompatActivity {
         ArrayList<String> dataArray = new ArrayList<>();
         for (int i = 1; i < 101; i++) {
             dataArray.add("Row " + i);
-//            {
-//            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-//            alertDialogBuilder.setTitle(null);
-////            {
-////                alertDialogBuilder
-////                        .setMessage("You selected ")
-////                        .setCancelable(true); // True allows you to use the back button to exit the dialog, false does not
-////            }
-//            AlertDialog alertDialog = alertDialogBuilder.create();
-//            alertDialog.show();
-//        }
-
-        adapter = new RecyclerAdapter(dataArray);
+        }
+        adapter = new RecyclerAdapter(dataArray, this);
         recyclerView.setAdapter(adapter);
     }
 
-}
+    // Here we have implemented an interface (OnRecyclerItemClickListener) from RecyclerAdapter which has all the code which relates to 'data'
+    @Override
+    public void onRecyclerItemClick(String data) {
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+        alertDialogBuilder.setTitle("You tapped...");
+        alertDialogBuilder.setMessage(data);
+        AlertDialog alertDialog = alertDialogBuilder.create();
+        alertDialog.show();
+
+        // Toast.makeText(this, "Please select select an option", Toast.LENGTH_SHORT).show();
+    }
 
 
+
+
+    // Toolbar
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater(); // Inflate the menu; this adds items to the action bar if it is present.
