@@ -45,7 +45,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         return dataSource.size();
     }
 
-    // The ViewHolder class is inherently tightly coupled to the RecyclerAdapter - part of its nature (the opposite of Separation of Concerns)
+    // The nested ViewHolder class is inherently tightly coupled to the RecyclerAdapter - part of its nature (the opposite of Separation of Concerns)
     public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         private TextView textView;
