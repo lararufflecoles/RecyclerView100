@@ -1,3 +1,3 @@
 # RecyclerView100
 
-Learning how to use RecyclerView
+Implementing a RecyclerView
